@@ -9,10 +9,10 @@
 
 * DevOps
 * CI/CD
-* [Day 27 - 漫步在雲端：在 GCP 中建立 k8s 叢集](https://ithelp.ithome.com.tw/articles/10193961)
+* [在 GCP 中建立 k8s 叢集](https://ithelp.ithome.com.tw/articles/10193961)
 
 
-既然這次是參加 DevOps 組別，勢必要與 DevOps 做個完美的結合。我們在過去的二十幾天內，一起探討了 k8s 的概念、各種不同的物件以及欣賞了各種不同的應用。最終，當然是希望將 k8s 套用到日常運作的系統內。[在 GCP 中建立 k8s 叢集](https://ithelp.ithome.com.tw/articles/10193961) 已經介紹過如何在 GCP 平台上建立 k8s 叢集，因此在這最後的時間，我們就以 GCP 當作例子示範來欣賞一下如何建立一條自動部署的 Pipeline。
+既然這次是參加 DevOps 組別，勢必要與 DevOps 做個完美的結合。我們在過去的二十幾天內，一起探討了 k8s 的概念、各種不同的物件以及欣賞了各種不同的應用。最終，當然是希望將 k8s 套用到日常運作的系統內。[在 GCP 中建立 k8s 叢集](https://ithelp.ithome.com.tw/articles/10193961) 已經介紹過如何在 GCP 平台上建立 k8s 叢集，因此利用這最後的時間，我們就以 GCP 當作例子示範來欣賞一下如何建立一條自動部署的 Pipeline。
 
 #### 系統架構
 
@@ -23,11 +23,13 @@
 * `開發者`：就是你拉！你可以利用不同的程式語言，無論是 Java, Go, PHP, Node, Python, ... 等等，開發你的應用程式。
 * `Code Repository`：當你在開發過程中，可以把開發紀錄存放在 Code Repository。無論是追縱、維護程式都有很多好處。常見的有 [github](https://github.com/), [bitbucket](https://bitbucket.org/), [Google Container Registry](https://cloud.google.com/container-registry/?hl=zh-tw),... 等等。
 
-> 我們這次使用 Google Container Registry
+> 我們這次使用 [github](https://github.com/)
 
 * `CI/CD 工具`：當程式撰寫完成並上傳到 Code Repository 後，就輪到 CI/CD 工具上場了，透過適當的設定，這些工具會在 Repository 發生變化時，嘗試編譯、執行、測試或部署新版本的應用程式，常見的工具有 [Jenkins](https://jenkins-ci.org/), [Drone](https://github.com/drone/drone), [CircleCI](https://circleci.com/docs/1.0/continuous-deployment-with-google-container-engine/), ... 等等。
 
 > 我們這次使用 Jenkins 
+
+* `Container Image Repository`：用來放置 k8s 需要使用的映像檔，如果不介意公開的話，可以直接使用 [Docker Hub](hub.docker.com)，我們使用 GCP 提供的 [Container Registry](https://cloud.google.com/container-registry/?hl=zh-tw) 服務當作本次的示範。
 
 * `k8s 開發測試環境`：供內部測試使用，可與正式環境並存在 k8s 叢集中。
 
