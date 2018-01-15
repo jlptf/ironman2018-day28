@@ -21,7 +21,7 @@
 ![](https://ithelp.ithome.com.tw/upload/images/20180107/20107062tZLXYswsgi.png)
 
 * `開發者`：就是你拉！你可以利用不同的程式語言，無論是 Java, Go, PHP, Node, Python, ... 等等，開發你的應用程式。
-* `Code Repository`：當你在開發過程中，可以把開發紀錄存放在 Code Repository。無論是追縱、維護程式都有很多好處。常見的有 [github](https://github.com/), [bitbucket](https://bitbucket.org/), [Google Container Registry](https://cloud.google.com/container-registry/?hl=zh-tw),... 等等。
+* `Code Repository`：當你在開發過程中，可以把開發紀錄存放在 Code Repository。無論是追縱、維護程式都有很多好處。常見的有 [github](https://github.com/), [bitbucket](https://bitbucket.org/),... 等等。
 
 > 我們這次使用 [github](https://github.com/)
 
